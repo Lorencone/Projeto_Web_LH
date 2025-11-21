@@ -1,17 +1,22 @@
 ﻿using System.Data.SqlClient;
 
-namespace Projeto_Web_Lh_Pets_versão_1
+namespace Projeto_Web_LH
 {
     class Banco
     {   
-	
+
+        private List<Clientes> lista = new List<Clientes>();
+        public List<Clientes> GetLista()
+        {
+            return lista;
+        }
     
 	public Banco()
 	{
 	 	try
                 {
                     SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder(
-                    "User ID=sa;Password=12345;" +
+                    "User ID=sa;Password=3013/k99;" +
                     "Server=localhost\\SQLEXPRESS;" +
                     "Database=vendas;" +
                     "Trusted_Connection=False;"
@@ -51,7 +56,6 @@ namespace Projeto_Web_Lh_Pets_versão_1
 	}
 	
   
- 
 	public String GetListaString()
 	{
 		string enviar= "<!DOCTYPE html>\n<html>\n<head>\n<meta charset='utf-8' />\n"+
